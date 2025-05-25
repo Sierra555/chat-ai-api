@@ -136,16 +136,18 @@ app.post(
 			});
 
 			//Format chat history for Gen AI
-			const conversation = pastMessages.flatMap((chat) => [
-				{
-					role: "user",
-					parts: [{ text: chat.message }],
-				},
-				{
-					role: "model",
-					parts: [{ text: chat.reply }],
-				},
-			]);
+			const conversation = pastMessages.flatMap(
+				(chat: any) => [
+					{
+						role: "user",
+						parts: [{ text: chat.message }],
+					},
+					{
+						role: "model",
+						parts: [{ text: chat.reply }],
+					},
+				]
+			);
 
 			//Add latest user messages to the converstaion
 			conversation.push({
