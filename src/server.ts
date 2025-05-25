@@ -130,7 +130,7 @@ app.post(
 					reply: true,
 				},
 				orderBy: {
-					createdAt: "desc",
+					createdAt: "asc",
 				},
 				take: 10,
 			});
